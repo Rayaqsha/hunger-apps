@@ -1,11 +1,13 @@
+/* eslint-disable object-property-newline */
 /* eslint-disable no-unused-vars */
 import UrlParser from '../../routes/url-parser';
 import RestaurantDbSource from '../../data/restaurantdb-source';
 import {
-  DetailContentTemplate, DetailMenuTemplate, DetailReviewTemplate, createLikeButtonTemplate,
+  DetailContentTemplate, DetailMenuTemplate, DetailReviewTemplate,
 } from '../templates/template-creator';
-import LikeButtonInitiator from '../../utils/like-button-initiator';
+import LikeButtonPresenter from '../../utils/like-button-presenter';
 import PostReviewInitiator from '../../utils/post-review-initiator';
+import FavoriteRestaurantIdb from '../../data/favorite-restaurant-idb';
 
 const Detail = {
   async render() {
@@ -81,8 +83,8 @@ const Detail = {
       reviewContainer.innerHTML += DetailReviewTemplate(review);
     });
 
-    LikeButtonInitiator.init({
-      likeButtonContainer: document.querySelector('#likeButtonContainer'),
+    LikeButtonPresenter.init({
+      likeButtonContainer: document.querySelector('#likeButtonContainer'), favoriteRestaurant: FavoriteRestaurantIdb,
       restaurant: {
         id: restaurant.id,
         name: restaurant.name,

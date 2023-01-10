@@ -94,24 +94,20 @@ input{
 
 /* hero */
 .hero__inner {
+  width: 100%;
+}
+.background__hero{
   position: relative;
+  max-height: 480px;
+  overflow: hidden;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  min-height: 380px;
-  padding: 20px;
-  background-color: #1E1512;
-}
-.overlay {
-  background-color: var(--second-color);
-  opacity: 0.3;
-  z-index: 1;
-  position: absolute;
-  width: 100%;
-  height: 100%;
 }
 .hero__content {
+  position: absolute;
+  padding: 20px;
   z-index: 2;
 }
 .hero__title {
@@ -158,14 +154,16 @@ input{
   box-shadow: 0 8px 16px 0px rgba(0, 0, 0, 0.15);
 }
 .card-header{
+  width: 100%;
+}
+.image-header__card{
   position: relative;
+  max-height: 200px;
   display: flex;
   padding: 0 0;
   justify-content: center;
   align-items: center;
   background-color: var(--first-color);
-  background-size: cover;
-  background-position: center;
   min-height: 180px;
   overflow: hidden;
 }
@@ -258,10 +256,11 @@ input{
   max-width: 800px;
 }
 .about__pict{
-  background-color: var(--second-color);
-  border-radius: 5px;
-  background-position: center;
-  background-size: cover;
+  overflow: hidden;
+}
+.image__about{
+  width: 100%;
+  border-radius: 10px;
 }
 .about__title{
   text-align: start;
@@ -278,6 +277,36 @@ input{
   justify-content: center;
   margin: 0;
   padding: 0;
+}
+.title-header{
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--second-color);
+}
+.favorite__header {
+  display: grid;
+  justify-items: center;
+}
+.search__container{
+  display: flex;
+}
+.search-bar{
+  font-family: poppins;
+  padding: 10px;
+  min-height: 44px;
+  max-height: 50px;
+  border-radius: 30px 0 0 30px;
+  border-style: solid;
+  border-color: var(--first-color);
+  border-width: 1px;
+}
+.search-button{
+  border: none;
+  min-height: 44px;
+  max-height: 50px;
+  border-radius: 0px 30px 30px 0px;
+  background-color: var(--first-color);
+  color: var(--second-color);
 }
 article{
   padding: 0;
@@ -359,6 +388,7 @@ article{
   gap: 15px;
 }
 .user__photo{
+  background-color: #cccccc;
   margin-top: 10px;
   width: 35px;
   height: 35px;
@@ -462,6 +492,9 @@ article{
   color: var(--second-color);
   font-weight: 700;
 }
+.restaurant__not__found{
+  margin-bottom: 300px;
+}
 
 /* responsive */
 @media screen and (min-width: 299px) {
@@ -539,6 +572,9 @@ article{
   }
   .post__container{
       max-width: 280px;
+  }
+  .favorite__header{
+    grid-template-columns: 1fr;
   }
 }
 @media screen and (min-width: 450px) {
@@ -620,6 +656,10 @@ article{
   .post__container{
       max-width: 550px;
   }
+  .favorite__header{
+    gap: 20px;
+    grid-template-columns: 1fr 1fr;
+  }
 }
 @media screen and (min-width: 750px) {
   .restaurant__list{
@@ -643,6 +683,9 @@ article{
   }
   .post__container{
       max-width: 700px;
+  }
+  .image__hero{
+    width: 1000px;
   }
 }
 @media screen and (min-width: 1000px) {
@@ -684,6 +727,9 @@ article{
   }
   .post__container{
       max-width: 800px;
+  }
+  .image__hero{
+    width: 1500px;
   }
 }
 @media screen and (min-width: 1200px) {
