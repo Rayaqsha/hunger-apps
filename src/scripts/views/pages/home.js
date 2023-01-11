@@ -13,7 +13,7 @@ const Home = {
             <div class="background__hero">
               <picture>
                 <source media="(max-width: 600px)" srcset="./images/hero-image_2-small.jpg">
-                <img src="./images/hero-image_2-large.jpg" 
+                <img class="image__hero" src="./images/hero-image_2-large.jpg" 
                     alt="jumbotron background poster">
               </picture>
               <div class="hero__content">
